@@ -1,0 +1,59 @@
+
+
+  <div class="" style="text-align:center">
+      <h1>mealTracker</h1>
+  </div>
+  <div class="card-body">
+  <div class="row">
+    <h4><i>Select leavel of calories</i>: </h4>
+    <select (change)="onChange($event.target.value)">
+      <option value="all" selected="selected">Show All</option>
+      <option value="high">Calories > 500</option>
+      <option value="low" >Calories < 500</option>
+    </select>
+
+  </div>
+
+
+  <div class="row right" >
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h4>Name:</h4>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h4>Description:</h4>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h4>Calories: </h4>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h4>Action</h4>
+    </div>
+  </div>
+  <hr size=6>
+
+<div *ngFor="let currentMeal of childMealList | caloriesLevel:selectedCaloriesLevel">
+
+  <div class="row">
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h5>{{ currentMeal.name }}</h5>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h5>{{ currentMeal.description }}</h5>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <h5>{{ currentMeal.calories }}</h5>
+    </div>
+    <div class="col-sm-3" style="background-color:wheat;">
+      <div class="row">
+        <div class="col-sm-5" style="background-color:wheat;">
+            <button (click)="editButtonHasBeenClicked(currentMeal)" class="btn btn-primary">Edit</button>
+        </div>
+        <div class="col-sm-7" style="background-color:wheat;">
+            <button (click)="deleteButtonHasBeenClicked(currentMeal)" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <hr size=4>

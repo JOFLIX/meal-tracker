@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="container" style="text-align:center">
+    <h1>
+      <i>{{title}}!</i>
+    </h1>
+  </div>
+<div class="row">
+  <div class="col-12">
+    <div>
+
+
+
+<div class="row">
+  <div class="col-sm-6" style="background-color: wheat;">
+    <app-add-meal
+      (newMealSender)="addMeal($event)"
+    ></app-add-meal>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6" style="background-color:wheat;">
+    <app-display
+      [childMealList]="MealsList"
+      (clickSender)="showDetails($event)"
+      (delSender)="deleteMeal($event)">
+    ></app-display>
+  </div>
+</div>
+</div>
+
+  </div>
+  <div class="col-6">
+    <div class="col-sm-6" style="background-color:wheat;">
+      <app-edit-meal
+        [childSelectedMeal]="selectedMeal"
+        (doneClickedSender)= "finishedEditing()"
+      ></app-edit-meal>
+    </div>
+
+  </div>
+</div>
+  </div>
