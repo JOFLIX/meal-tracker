@@ -8,5 +8,8 @@ MealTracker is an App where one can track their Meals
 5. Sort Meals based on their calories level
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
+##BUGS
+The application keeps on breaking, but we are working to maintain it.
+
 ## Developer
 It was Developed by Mulu Kadan, 2017
